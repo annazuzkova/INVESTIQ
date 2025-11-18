@@ -1,0 +1,185 @@
+:root {
+    --bg: #f7f8fb;
+    --accent: #ff7a2d;
+    --muted: #cfd6df;
+    --card: #ffffff;
+    --text: #0b1220;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body,
+html,
+#root {
+    height: 100%;
+    overflow-y: hidden;
+}
+
+
+.iq-root {
+    min-height: 100vh;
+    display: flex;
+    background: var(--bg);
+    font-family: Inter, "Segoe UI", Roboto, sans-serif;
+    color: var(--text);
+    width: 100%;
+    overflow-y: hidden;
+}
+
+/* left hero */
+.iq-hero {
+    flex: 1;
+    padding: 80px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.iq-small-logo {
+    width: 90px;
+    margin-bottom: 20px;
+}
+
+.iq-title {
+    font-size: 72px;
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+}
+
+.iq-sub {
+    margin-top: 8px;
+    color: var(--muted);
+    letter-spacing: 4px;
+    font-size: 12px;
+}
+
+/* right card */
+.iq-card-wrap {
+    width: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.iq-card {
+    width: 100%;
+    background: var(--card);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 20px 50px rgba(12, 20, 32, 0.08);
+    border: 1px solid rgba(8, 12, 18, 0.03);
+}
+
+.iq-hint {
+    font-size: 13px;
+    color: #7b8694;
+    margin: 0 0 12px
+}
+
+.iq-google {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid #e6e9ec;
+    background: white;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    box-shadow: none;
+    margin-bottom: 16px;
+}
+
+.iq-google-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background: #f5f5f5;
+    font-weight: 700;
+}
+
+/* helper text */
+.iq-or {
+    font-size: 13px;
+    color: #9aa4ad;
+    margin: 8px 0 12px
+}
+
+/* inputs */
+.iq-label {
+    display: block;
+    font-size: 13px;
+    color: #7b8694;
+    margin-top: 8px;
+    margin-bottom: 6px
+}
+
+.iq-input {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 30px;
+    border: 1px solid #eef2f6;
+    background: #f8fafc;
+    outline: none;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* actions */
+.iq-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    justify-content: flex-start
+}
+
+.iq-btn {
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-weight: 700
+}
+
+.iq-btn.primary {
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 8px 20px rgba(255, 122, 45, 0.18)
+}
+
+.iq-btn.ghost {
+    background: #f3f5f7;
+    color: #556270;
+    border: 1px solid #e6e9ec
+}
+
+/* responsive */
+@media(max-width:880px) {
+    .iq-root {
+        flex-direction: column
+    }
+
+    .iq-hero {
+        padding: 40px;
+        text-align: center
+    }
+
+    .iq-card-wrap {
+        width: 100%;
+        padding: 24px
+    }
+
+    .iq-title {
+        font-size: 48px
+    }
+}
