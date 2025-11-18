@@ -1,0 +1,16 @@
+.balance {
+    padding: 12px;
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.value {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
