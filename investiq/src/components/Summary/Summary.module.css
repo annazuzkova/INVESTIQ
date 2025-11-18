@@ -1,0 +1,11 @@
+.summary {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.summary div {
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+}

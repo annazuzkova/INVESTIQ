@@ -1,0 +1,14 @@
+.form {
+    display: flex;
+    gap: 8px;
+    margin: 12px 0;
+}
+
+.form input {
+    padding: 8px;
+    flex: 1;
+}
+
+.form button {
+    padding: 8px 12px;
+}
