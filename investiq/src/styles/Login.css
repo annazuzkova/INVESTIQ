@@ -28,19 +28,34 @@ html,
     overflow-y: hidden;
 }
 
-/* left hero */
+
 .iq-hero {
     flex: 1;
-    padding: 80px 80px;
+    padding: 60px 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
 }
 
+.iq-hero-photo {
+    position: absolute;
+    left: -10px;
+    top: 8%;
+    width: 145%;
+    z-index: 1;
+}
+
+.iq-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
 .iq-small-logo {
     width: 90px;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .iq-title {
@@ -48,7 +63,7 @@ html,
     margin: 0;
     font-weight: 800;
     letter-spacing: 1px;
-    text-transform: lowercase;
+    font-family: 'Roboto', sans-serif;
 }
 
 .iq-sub {
@@ -58,7 +73,6 @@ html,
     font-size: 12px;
 }
 
-/* right card */
 .iq-card-wrap {
     width: 420px;
     display: flex;
@@ -74,6 +88,7 @@ html,
     padding: 28px;
     box-shadow: 0 20px 50px rgba(12, 20, 32, 0.08);
     border: 1px solid rgba(8, 12, 18, 0.03);
+    z-index: 2;
 }
 
 .iq-hint {
@@ -108,14 +123,12 @@ html,
     font-weight: 700;
 }
 
-/* helper text */
 .iq-or {
     font-size: 13px;
     color: #9aa4ad;
     margin: 8px 0 12px
 }
 
-/* inputs */
 .iq-label {
     display: block;
     font-size: 13px;
@@ -135,7 +148,6 @@ html,
     margin-bottom: 8px;
 }
 
-/* actions */
 .iq-actions {
     display: flex;
     gap: 12px;
@@ -163,7 +175,6 @@ html,
     border: 1px solid #e6e9ec
 }
 
-/* responsive */
 @media(max-width:880px) {
     .iq-root {
         flex-direction: column
