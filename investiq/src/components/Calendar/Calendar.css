@@ -1,0 +1,79 @@
+.income-form {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: sans-serif;
+}
+
+/* === ДАТА === */
+.income-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.date-input {
+  padding: 10px 14px;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+/* === ОПИС === */
+.income-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+/* === КАТЕГОРІЯ === */
+.income-category {
+  padding: 10px 14px;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+/* === СУМА === */
+.income-amount {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+/* === КНОПКИ === */
+.income-submit {
+  padding: 12px 26px;
+  border: none;
+  border-radius: 12px;
+  background: #ff8400;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.income-submit:hover {
+  background: #ff9500;
+}
+
+.income-clear {
+  padding: 12px 26px;
+  border: none;
+  border-radius: 12px;
+  background: #f2f2f2;
+  color: #555;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.income-clear:hover {
+  background: #e6e6e6;
+}
