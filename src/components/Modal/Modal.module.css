@@ -1,0 +1,18 @@
+.modalMain{
+    width: 380px;
+    height: 194px;
+    background-color: #FFFFFF;
+}
+.titleModal{
+    text-align: center;
+    padding: 50px 0 0 0;
+}
+.btnExit{
+    padding: 10px 20px;
+    background-color: #FF751D;
+}
+.btnStay{
+    padding: 10px 20px;
+    background-color: #F5F6FB;
+    border: 1px solid #F5F6FB;
+}
