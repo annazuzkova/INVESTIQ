@@ -1,12 +1,44 @@
-import React from 'react';
-import Modal from "../Modal/Modal.jsx"
+import React, { useEffect, useState } from 'react';
 
 export default function Header() {
-    // don't render header on login page
-    if (typeof window !== 'undefined') {
-        const path = window.location.pathname.toLowerCase();
-        if (path.includes('login')) return null;
-    }
+    const [isRegistered, setIsRegistered] = useState(() => {
+        if (typeof window === 'undefined') return false;
+        return localStorage.getItem('isRegistered') === 'true';
+    });
+    const [userName, setUserName] = useState(() => {
+        if (typeof window === 'undefined') return '';
+        return localStorage.getItem('userName') || '';
+    });
+    const [hideOnLogin, setHideOnLogin] = useState(() => {
+        if (typeof window === 'undefined') return false;
+        return window.location.pathname.toLowerCase().includes('login');
+    });
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const check = () => {
+            const flag = localStorage.getItem('isRegistered') === 'true';
+            const name = localStorage.getItem('userName') || '';
+            setIsRegistered(flag);
+            setUserName(name);
+        };
+        check();
+
+        const onStorage = (e) => {
+            if (e.key === 'isRegistered' || e.key === 'userName') check();
+        };
+        window.addEventListener('storage', onStorage);
+
+        const onPop = () => setHideOnLogin(window.location.pathname.toLowerCase().includes('login'));
+        window.addEventListener('popstate', onPop);
+
+        return () => {
+            window.removeEventListener('storage', onStorage);
+            window.removeEventListener('popstate', onPop);
+        };
+    }, []);
+
+    if (hideOnLogin) return null;
 
     const headerStyle = {
         height: 56,
@@ -67,6 +99,14 @@ export default function Header() {
         fontSize: 12,
     };
 
+    const handleLogout = (e) => {
+        e.preventDefault();
+        localStorage.removeItem('isRegistered');
+        localStorage.removeItem('userName');
+        setIsRegistered(false);
+        setUserName('');
+    };
+
     return (
         <header style={headerStyle}>
             <div style={leftStyle}>
@@ -74,13 +114,17 @@ export default function Header() {
                 <div style={titleStyle}>INVESTIQ</div>
             </div>
 
-            <div style={rightStyle}>
-                <div style={userCircle}>U</div>
-                <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
-                    <span style={{ fontSize: 13, color: '#26303a' }}>User Name</span>
-                    <a href="#" onClick={Modal} style={{ fontSize: 12, color: '#6b7782', textDecoration: 'underline' }}>Вийти</a>
+            {isRegistered ? (
+                <div style={rightStyle}>
+                    <div style={userCircle}>{(userName && userName[0]?.toUpperCase()) || 'U'}</div>
+                    <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
+                        <span style={{ fontSize: 13, color: '#26303a' }}>{userName || 'User'}</span>
+                        <a href="#" onClick={handleLogout} style={{ fontSize: 12, color: '#6b7782', textDecoration: 'underline' }}>
+                            Вийти
+                        </a>
+                    </div>
                 </div>
-            </div>
+            ) : null}
         </header>
     );
 }
