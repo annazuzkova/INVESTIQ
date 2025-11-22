@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import './App.css';
 import Header from '../Header/Header';
 import Login from '../../pages/Login';
+import FinancePage from "../../pages/FinancePage/FinancePage.jsx"
 import '../../styles/Login.css';
 
 export default function App() {
-    useEffect(() => {
+    /* useEffect(() => {
         const prevMargin = document.body.style.margin;
         const prevOverflowY = document.body.style.overflowY;
         document.body.style.margin = '0';
@@ -23,5 +24,12 @@ export default function App() {
                 <Login />
             </div>
         </div>
-    );
+    ); */
+
+    return(
+        <>
+            <Header />
+            <FinancePage />
+        </>
+    )
 }
