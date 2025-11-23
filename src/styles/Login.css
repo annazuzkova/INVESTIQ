@@ -1,3 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
 :root {
     --bg: #f7f8fb;
     --accent: #ff7a2d;
@@ -6,36 +36,96 @@
     --text: #0b1220;
 }
 
-* {
-    box-sizing: border-box
+input,
+button,
+textarea {
+    font-family: inherit;
 }
 
-body,
-html,
-#root {
-    height: 100%;
-    overflow-y: hidden;
+input::-ms-clear {
+    display: none;
 }
 
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
 
 .iq-root {
     min-height: 100vh;
     display: flex;
-    background: var(--bg);
+    background: #fff;
     font-family: Inter, "Segoe UI", Roboto, sans-serif;
     color: var(--text);
     width: 100%;
     overflow-y: hidden;
 }
 
-
 .iq-hero {
     flex: 1;
-    padding: 60px 60px;
+    padding: 60px 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
+}
+
+.iq-hero::before {
+    content: "";
+    width: 150%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 14%;
+    background: #F5F6FB;
+    border-radius: 0 0 80px 80px;
+    box-shadow: 0 8px 30px rgba(12, 20, 32, 0.06);
+    z-index: 0;
+    pointer-events: none;
 }
 
 .iq-hero-photo {
@@ -44,11 +134,21 @@ html,
     top: 8%;
     width: 145%;
     z-index: 1;
+    image-rendering: pixelated;
 }
 
 .iq-hero-content {
     position: relative;
     z-index: 2;
+}
+
+.iq-card-wrap {
+    width: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    z-index: 3;
 }
 
 .iq-small-logo {
@@ -59,36 +159,34 @@ html,
 }
 
 .iq-title {
-    font-size: 72px;
     margin: 0;
-    font-weight: 800;
     letter-spacing: 1px;
-    font-family: 'Roboto', sans-serif;
+    color: #000000;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 102px;
+    font-variation-settings:
+        "wdth" 100;
 }
 
 .iq-sub {
     margin-top: 8px;
-    color: var(--muted);
+    color: #52555F;
     letter-spacing: 4px;
     font-size: 12px;
-}
-
-.iq-card-wrap {
-    width: 420px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
 }
 
 .iq-card {
     width: 100%;
     background: var(--card);
     border-radius: 18px;
-    padding: 28px;
+    padding: 50px 30px;
     box-shadow: 0 20px 50px rgba(12, 20, 32, 0.08);
     border: 1px solid rgba(8, 12, 18, 0.03);
     z-index: 2;
+    margin-right: 200px;
 }
 
 .iq-hint {

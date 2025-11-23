@@ -15,21 +15,21 @@ export default function App() {
             document.body.style.margin = prevMargin;
             document.body.style.overflowY = prevOverflowY;
         };
-    }, []);
+    }, []); */
 
-    return (
+    /* return (
         <div className="app" style={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
             <Header />
             <div style={{ flex: 1, overflow: 'hidden' }}>
                 <Login />
             </div>
         </div>
-    ); */
+    );  */
 
     return(
         <>
             <Header />
             <FinancePage />
         </>
-    )
+    ) 
 }

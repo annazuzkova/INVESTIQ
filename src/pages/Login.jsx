@@ -1,30 +1,41 @@
 import React, { useState } from 'react';
 import '../styles/Login.css';
 import Logo from '../assets/logo.svg';
-import Photos from '../pages/photos.png';
+import Photos from '../pages/Photos.svg';
 
 export default function Login() {
+    // режим: login або register
     const [mode, setMode] = useState('login');
+    // поля для входу
     const [loginEmail, setLoginEmail] = useState('');
     const [loginPassword, setLoginPassword] = useState('');
 
+    // поля для реєстрації
     const [regName, setRegName] = useState('');
     const [regEmail, setRegEmail] = useState('');
     const [regPassword, setRegPassword] = useState('');
+    // повідомлення для користувача (успіх/помилка)
     const [message, setMessage] = useState('');
 
+    // Обробник входу
     const handleLogin = (e) => {
         e.preventDefault();
+        // читання з localStorage — тут просте локальне збереження користувача
         const storedEmail = localStorage.getItem('userEmail');
         const storedPassword = localStorage.getItem('userPassword');
         const storedName = localStorage.getItem('userName');
 
+        // Якщо користувача немає в localStorage то просимо зареєструватися
         if (!storedEmail) {
-            setMessage('Пользователь не найден. Пожалуйста, зарегистрируйтесь.');
+            setMessage('Користувача не знайдено. Будь ласка, зареєструйтесь.');
             return;
         }
 
+        // Порівнюємо введені дані з збереженими.
+        // Примітка: це спрощена авторизація для демо — без хешування,
+        // не використовувати так у продакшені.
         if (loginEmail === storedEmail && loginPassword === storedPassword) {
+            // відмічаємо стан "увійшов"
             localStorage.setItem('isRegistered', 'true');
             if (storedName) localStorage.setItem('userName', storedName);
             setMessage('Успішний вхід.');
@@ -33,12 +44,17 @@ export default function Login() {
         }
     };
 
+    // Обробник реєстрації
     const handleRegister = (e) => {
         e.preventDefault();
+        // Перевірка заповнення полів
         if (!regName || !regEmail || !regPassword) {
             setMessage('Заповніть усі поля реєстрації.');
             return;
         }
+        // Зберігаємо прості ключі в localStorage.
+        // Пояснення: ми зберігаємо ім'я, email і пароль локально для демонстрації.
+        // У реальній системі пароль повинен зберігатися на сервері у захищеному вигляді.
         localStorage.setItem('isRegistered', 'true');
         localStorage.setItem('userName', regName);
         localStorage.setItem('userEmail', regEmail);
@@ -53,7 +69,9 @@ export default function Login() {
     return (
         <div className="iq-root">
             <div className="iq-hero">
+                {/* ілюстрація зліва — декоративна, не впливає на логіку */}
                 <img src={Photos} alt="illustration" className="iq-hero-photo" />
+                {/* логотип зверху */}
                 <img src={Logo} alt="investiq" className="iq-small-logo" />
                 <div className="iq-hero-content">
                     <h1 className="iq-title">InvestIQ</h1>
@@ -66,10 +84,6 @@ export default function Login() {
                     {mode === 'login' ? (
                         <>
                             <p className="iq-hint">Ви можете авторизуватися за допомогою акаунта Google</p>
-                            <button className="iq-google" type="button">
-                                <span className="iq-google-icon">G</span>
-                                Google
-                            </button>
 
                             <p className="iq-or">Або увійти за допомогою ел. пошти та пароля після реєстрації</p>
 
