@@ -119,30 +119,30 @@ export default function Header() {
         <div style={titleStyle}>INVESTIQ</div>
       </div>
 
-      {/* {isRegistered ? ( */}
-      <div style={rightStyle}>
-        <div style={userCircle}>
-          {(userName && userName[0]?.toUpperCase()) || "U"}
-        </div>
-        <div
-          style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}
-        >
-          <span style={{ fontSize: 13, color: "#26303a" }}>
-            {userName || "User"}
-          </span>
-          <Link
-            onClick={handleLogout}
-            style={{
-              fontSize: 12,
-              color: "#6b7782",
-              textDecoration: "underline",
-            }}
+      {isRegistered ? (
+        <div style={rightStyle}>
+          <div style={userCircle}>
+            {(userName && userName[0]?.toUpperCase()) || "U"}
+          </div>
+          <div
+            style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}
           >
-            Вийти
-          </Link>
+            <span style={{ fontSize: 13, color: "#26303a" }}>
+              {userName || "User"}
+            </span>
+            <Link
+              onClick={handleLogout}
+              style={{
+                fontSize: 12,
+                color: "#6b7782",
+                textDecoration: "underline",
+              }}
+            >
+              Вийти
+            </Link>
+          </div>
         </div>
-      </div>
-      {/* ) : null} */}
+      ) : null}
     </header>
   );
 }
