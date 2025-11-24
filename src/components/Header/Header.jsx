@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -109,7 +109,7 @@ export default function Header() {
     localStorage.removeItem("userName");
     setIsRegistered(false);
     setUserName("");
-    navigate("/");
+    navigate("/login");
   };
 
   return (
@@ -119,31 +119,30 @@ export default function Header() {
         <div style={titleStyle}>INVESTIQ</div>
       </div>
 
-      {isRegistered ? (
-        <div style={rightStyle}>
-          <div style={userCircle}>
-            {(userName && userName[0]?.toUpperCase()) || "U"}
-          </div>
-          <div
-            style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}
-          >
-            <span style={{ fontSize: 13, color: "#26303a" }}>
-              {userName || "User"}
-            </span>
-            <Link
-              href="#"
-              onClick={handleLogout}
-              style={{
-                fontSize: 12,
-                color: "#6b7782",
-                textDecoration: "underline",
-              }}
-            >
-              Вийти
-            </Link>
-          </div>
+      {/* {isRegistered ? ( */}
+      <div style={rightStyle}>
+        <div style={userCircle}>
+          {(userName && userName[0]?.toUpperCase()) || "U"}
         </div>
-      ) : null}
+        <div
+          style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}
+        >
+          <span style={{ fontSize: 13, color: "#26303a" }}>
+            {userName || "User"}
+          </span>
+          <Link
+            onClick={handleLogout}
+            style={{
+              fontSize: 12,
+              color: "#6b7782",
+              textDecoration: "underline",
+            }}
+          >
+            Вийти
+          </Link>
+        </div>
+      </div>
+      {/* ) : null} */}
     </header>
   );
 }
