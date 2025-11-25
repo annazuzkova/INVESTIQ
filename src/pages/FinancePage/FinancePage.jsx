@@ -3,7 +3,7 @@ import React from 'react'
 function FinancePage(){
     return(
         <>
-            <h1>Hi</h1>
+            <h1>Biba i boba</h1>
         </>
     )
 }
