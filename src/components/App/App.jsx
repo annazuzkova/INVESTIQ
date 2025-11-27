@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from '../Header/Header';
-import Login from '../../pages/Login';
+import Login from '../../pages/Login.jsx';
 import FinancePage from "../../pages/FinancePage/FinancePage.jsx";
 import Calendarik from "../Calendar/Calendar.jsx";
 import "../Calendar/Calendar.css";
@@ -14,13 +14,12 @@ export default function App() {
     return (
         <BrowserRouter>
             <Header />
-
             <Routes>
-                {/* Головна */}
-                <Route path="/" element={<Costs />} />
-
                 {/* Логін */}
-                <Route path="/login" element={<Login />} />
+                <Route path="/" element={<Login />} />
+
+                {/* Головна */}
+                <Route path="/costs" element={<Costs />} />
 
                 {/* Фінансові сторінки */}
                 <Route path="/finance" element={<FinancePage />} />

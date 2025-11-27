@@ -87,9 +87,9 @@ export default function Login() {
         <div className="iq-card">
           {mode === "login" ? (
             <>
-              <p className="iq-hint">
+              {/* <p className="iq-hint">
                 Ви можете авторизуватися за допомогою акаунта Google
-              </p>
+              </p> */}
 
               <p className="iq-or">
                 Або увійти за допомогою ел. пошти та пароля після реєстрації
