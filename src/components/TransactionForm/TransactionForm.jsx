@@ -1,23 +1,71 @@
-import React, { useState } from 'react';
-import styles from './TransactionForm.module.css';
+import React, { useState } from "react";
+import styles from "./TransactionForm.module.css";
 
 export default function TransactionForm({ onAdd }) {
-    const [text, setText] = useState('');
-    const [amount, setAmount] = useState('');
+  const [text, setText] = useState("");
+  const [amount, setAmount] = useState("");
+  const [category, setCategoty] = useState("");
 
-    const handleSubmit = e => {
-        e.preventDefault();
-        if (!text || !amount) return;
-        onAdd && onAdd({ id: Date.now(), text, amount: Number(amount) });
-        setText('');
-        setAmount('');
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!text || !amount) return;
+    onAdd && onAdd({ id: Date.now(), text, category, amount: Number(amount) });
+    setText("");
+    setAmount("");
+    setCategoty("");
+  };
 
-    return (
-        <form className={styles.form} onSubmit={handleSubmit}>
-            <input value={text} onChange={e => setText(e.target.value)} placeholder="Назва" />
-            <input value={amount} onChange={e => setAmount(e.target.value)} placeholder="Сума" type="number" />
-            <button type="submit">Додати</button>
-        </form>
-    );
+  const cleanForm = () => {
+    setText("");
+    setAmount("");
+    setCategoty("");
+  };
+
+  return (
+    <form className={styles.form} onSubmit={handleSubmit}>
+      <div className={styles.wrapper}>
+        <input
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Назва"
+          className={styles.description}
+        />
+        <select
+          id="category"
+          name="category"
+          onChange={(e) => setCategoty(e.target.value)}
+        >
+          <option value="Транспорт">Транспорт</option>
+          <option value="Продукти">Продукти</option>
+          <option value="Здоров’я">Здоров’я</option>
+          <option value="Алкоголь">Алкоголь</option>
+          <option value="Розваги">Розваги</option>
+          <option value="Все для дому">Все для дому</option>
+          <option value="Техніка">Техніка</option>
+          <option value="Комуналка, зв’язок">Комуналка, зв’язок</option>
+          <option value="Спорт, хобі">Спорт, хобі</option>
+          <option value="Навчання">Навчання</option>
+          <option value="Інше">Інше</option>
+        </select>
+        <input
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          placeholder="Сума"
+          type="number"
+          className={styles.amount}
+        />
+      </div>
+      <button type="submit" className={styles.submit}>
+        ввести
+      </button>
+      <button
+        onClick={() => {
+          cleanForm();
+        }}
+        className={styles.clean}
+      >
+        Очистити
+      </button>
+    </form>
+  );
 }

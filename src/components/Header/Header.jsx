@@ -109,7 +109,7 @@ export default function Header() {
     localStorage.removeItem("userName");
     setIsRegistered(false);
     setUserName("");
-    navigate("/login");
+    navigate("/");
   };
 
   return (
