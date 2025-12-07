@@ -1,0 +1,12 @@
+.data {
+  width: 104px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.data span {
+  font-weight: 900;
+  font-size: 12px;
+  color: #52555f;
+}

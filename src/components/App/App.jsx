@@ -4,8 +4,10 @@ import Header from "../Header/Header";
 import Login from "../../pages/Login";
 import FinancePage from "../../pages/FinancePage/FinancePage.jsx";
 import DashboardPage from "../../pages/DashboardPage/DashboardPage.jsx";
+import MobileFormPage from "../../pages/MobileFormPage/MobileFormPage.jsx";
 import "../../styles/Login.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Background from "../Background/Background.jsx";
 
 export default function App() {
   useEffect(() => {
@@ -19,31 +21,19 @@ export default function App() {
     };
   }, []);
 
-  //   return (
-  //     <div
-  //       className="app"
-  //       style={{
-  //         height: "100vh",
-  //         display: "flex",
-  //         flexDirection: "column",
-  //         overflow: "hidden",
-  //       }}
-  //     >
-  //       <Header />
-  //       <div style={{ flex: 1, overflow: "hidden" }}>
-  //         <Login />
-  //       </div>
-  //     </div>
-  //   );
-
   return (
     <>
       <BrowserRouter>
+        <Background />
         <Header />
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/financepage" element={<FinancePage />} />
           <Route path="/dashboardpage" element={<DashboardPage />} />
+          <Route
+            path="/dashboardpage/add-transaction/:type"
+            element={<MobileFormPage />}
+          />
         </Routes>
       </BrowserRouter>
     </>

@@ -17,6 +17,7 @@
   height: 386px;
   overflow-y: auto;
   border-radius: 10px;
+  width: 760px;
 }
 
 /* Кастомний скрол справа */
@@ -68,15 +69,25 @@ tr {
   background: none;
   border: none;
   cursor: pointer;
-  opacity: 0.7;
 }
 
-.deleteBtn:hover {
-  opacity: 1;
+.delete {
+  width: 18px;
+  padding-right: 43px;
 }
 
 /* Порожні рядки (для ефекту, як у дизайні) */
 .emptyRow td {
   height: 32px;
   border-bottom: 1px solid #f6f6f6;
+}
+
+@media (max-width: 1200px) {
+  .tableWrapper {
+    width: 605px;
+  }
+  .delete {
+    width: 18px;
+    padding-right: 26px;
+  }
 }

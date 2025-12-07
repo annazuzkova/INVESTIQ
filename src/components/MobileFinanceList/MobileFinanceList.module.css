@@ -1,0 +1,16 @@
+.table {
+  width: 100%;
+  position: absolute;
+  bottom: 100px;
+}
+
+.namewrapper {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.datawrapper {
+  font-weight: 400;
+  font-size: 8px;
+  color: #52555f;
+}

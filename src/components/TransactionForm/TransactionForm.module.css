@@ -1,13 +1,30 @@
+/* Chrome, Edge, Safari */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} /* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 .form {
   display: flex;
-  gap: 8px;
-  margin: 12px 0;
+  gap: 27px;
+  margin-bottom: 60px;
 }
 
 /* .form input {
   padding: 8px;
   flex: 1;
 } */
+
+input::placeholder {
+  font-weight: 700;
+  font-size: 12px;
+  opacity: 1;
+  color: #c7ccdc;
+}
 
 .form button {
   width: 100%;
@@ -51,16 +68,16 @@
 }
 
 .description {
-  flex: 248 1 0;
+  width: 268px;
 }
 
 select {
-  flex: 148 1 0;
+  width: 188px;
   cursor: pointer;
 }
 
 .amount {
-  flex: 84 1 0;
+  width: 126px;
   justify-content: space-between;
 }
 
@@ -73,4 +90,38 @@ select {
   border: 2px solid #f5f6fb;
   background-color: transparent;
   color: #52555f;
+}
+
+.buttons {
+  display: flex;
+  width: 265px;
+  gap: 15px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 33px;
+}
+
+@media (max-width: 1200px) {
+  .form {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 48px;
+  }
+  .wrapper {
+    max-width: 467px;
+    height: 44px;
+  }
+  .description {
+    width: 192px;
+  }
+  select {
+    width: 171px;
+  }
+  .amount {
+    width: 104px;
+  }
 }
