@@ -92,7 +92,7 @@ export default function Login() {
               </p> */}
 
               <p className="iq-or">
-                Або увійти за допомогою ел. пошти та пароля після реєстрації
+                Увійти за допомогою ел. пошти та пароля після реєстрації
               </p>
 
               <form onSubmit={handleLogin}>
