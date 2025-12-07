@@ -3,7 +3,10 @@ import './App.css';
 import Header from '../Header/Header';
 import Login from '../../pages/Login';
 import FinancePage from "../../pages/FinancePage/FinancePage.jsx"
+import Calendarik from "../Calendar/Calendar.jsx"
+import "../Calendar/Calendar.css"
 import '../../styles/Login.css';
+import Modal from "../Modal/Modal.jsx"
 
 export default function App() {
     /* useEffect(() => {
@@ -26,10 +29,13 @@ export default function App() {
         </div>
     ); */
 
-    return(
-        <>
-            <Header />
-            <FinancePage />
-        </>
+    return (
+        <div>
+            <Header></Header>
+            <FinancePage></FinancePage>
+            <div className='mainFinance'>
+                <Calendarik></Calendarik>
+            </div>
+        </div>
     )
 }

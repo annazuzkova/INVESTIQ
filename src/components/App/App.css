@@ -4,3 +4,24 @@
     background: var(--bg, #f6f7fb);
     color: var(--text, #111);
 }
+
+.mainFinance{
+    width: 1150px;
+    height: 530px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    margin-top: -100px;
+    border-radius: 0 30px 30px 30px;
+}
+
+
+
+/* Responsive */
+
+
+
+@media(max-width: 768px){
+    .mainFinance{
+        width: 750px;
+    }
+}

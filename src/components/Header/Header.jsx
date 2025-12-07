@@ -1,5 +1,4 @@
 import React from 'react';
-import Modal from "../Modal/Modal.jsx"
 
 export default function Header() {
     // don't render header on login page
@@ -68,7 +67,7 @@ export default function Header() {
     };
 
     return (
-        <header style={headerStyle}>
+        <nav className='header-main' style={headerStyle}>
             <div style={leftStyle}>
                 <div style={logoBox}>i</div>
                 <div style={titleStyle}>INVESTIQ</div>
@@ -78,9 +77,9 @@ export default function Header() {
                 <div style={userCircle}>U</div>
                 <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
                     <span style={{ fontSize: 13, color: '#26303a' }}>User Name</span>
-                    <a href="#" onClick={Modal} style={{ fontSize: 12, color: '#6b7782', textDecoration: 'underline' }}>Вийти</a>
+                    <a href="#"style={{ fontSize: 12, color: '#6b7782', textDecoration: 'underline' }}>Вийти</a>
                 </div>
             </div>
-        </header>
+        </nav>
     );
 }

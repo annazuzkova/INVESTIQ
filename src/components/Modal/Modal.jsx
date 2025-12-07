@@ -1,13 +1,18 @@
 import React from 'react';
-import styles from './Modal.module.css';
+import styles from "./Modal.module.css"
 
 function Modal(){
     return(
         <>
-            <div style={styles.modalMain} className='modalMain'>
-                <p style={styles.titleModal} className='titleModal'>Ви впевнені?</p>
-                <button type='button' style={styles.btnExit} className='btnExit'>ТАК</button>
-                <button type='button' style={styles.btnStay} className='btnStay'>НІ</button>
+            {/* <div className={styles.modalMain}>
+                <p className={styles.titleModal}>Ви дійсно хочете вийти?</p>
+                <button type='button' className={styles.btnExit}>ТАК</button>
+                <button type='button' className={styles.btnStay}>НІ</button>
+            </div> */}
+            <div className={styles.modalMain}>
+                <p className={styles.titleModal}>Ви впевнені?</p>
+                <button type='button' className={styles.btnExit}>ТАК</button>
+                <button type='button' className={styles.btnStay}>НІ</button>
             </div>
         </>
     )

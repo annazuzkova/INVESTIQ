@@ -1,18 +1,46 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+*{
+    margin: 0; 
+    padding: 0; 
+    border: 0;
+    list-style: none; 
+    box-sizing: border-box; 
+    text-decoration: none;
+}
+
 .modalMain{
     width: 380px;
     height: 194px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
+    border-radius: 30px;
+    margin: 120px auto;
 }
 .titleModal{
     text-align: center;
     padding: 50px 0 0 0;
+    font-family: 'Roboto';
+    color: #52555F;
+    font-size: 14px;
 }
 .btnExit{
-    padding: 10px 20px;
+    position: relative;
+    top: 10px;
+    left: 60px;
+    padding: 12px 48px;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
     background-color: #FF751D;
+    color: #FFF;
 }
 .btnStay{
-    padding: 10px 20px;
-    background-color: #F5F6FB;
-    border: 1px solid #F5F6FB;
+    position: relative;
+    top: 10px;
+    left: 75px;
+    padding: 12px 55px;
+    border-radius: 16px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #e1e1e1;
 }
